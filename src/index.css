@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-electric-blue: #1E5BFF;
+    --color-poster-navy: #0B1F4D;
+    --color-hot-pink: #FF3D9A;
+    --color-fresh-green: #22C55E;
+    --color-tint-blue: #EAF1FF;
+    --color-tint-pink: #FFE6F2;
+    --color-tint-green: #E3F9EA;
+  }
+
+  body {
+    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #0B1F4D;
+    background-color: #0B1F4D;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print optimizations for A4 / A3 physical poster printing */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  body {
+    background-color: #FFFFFF !important;
+    color: #0B1F4D !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .poster-container {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem !important;
+  }
+}
+
+/* Keyframes for Wi-Fi wave pulses */
+@keyframes wifi-pulse-wave {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-wifi-pulse {
+  animation: wifi-pulse-wave 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+/* Shimmer gradient text animation */
+@keyframes gradient-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-shimmer-text {
+  background-size: 200% auto;
+  animation: gradient-shimmer 4s ease infinite;
+}
